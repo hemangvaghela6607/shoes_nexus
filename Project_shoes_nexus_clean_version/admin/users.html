@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management — SHOE NEXUS Admin</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Admin Master Stylesheet (Clean White Theme) -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div>
+            <div class="sidebar-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h3>SHOE NEXUS</h3>
+                    <span class="tag">ADMIN CONSOLE</span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <span class="menu-label">Overview</span>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-chart-pie"></i> Dashboard</span>
+                </a>
+
+                <span class="menu-label">Management</span>
+                <a href="products.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-shoe-prints"></i> Products Catalog</span>
+                </a>
+                <a href="orders.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-truck-fast"></i> Orders & Delivery</span>
+                </a>
+                <a href="users.html" class="sidebar-link active">
+                    <span class="link-left"><i class="fa-solid fa-users"></i> Customers</span>
+                </a>
+                <a href="messages.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-envelope-open-text"></i> Messages</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout Admin</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <h1>Customer Accounts & VIP Members</h1>
+            <div class="topbar-actions">
+                <div class="admin-user-pill">
+                    <div class="admin-avatar">A</div>
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--dark-900);">Admin Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Customers Table Body -->
+        <div class="admin-body">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <!-- <input type="text" class="admin-input" placeholder="Search customers by name, phone or email..." style="width: 320px;"> -->
+                <div style="display: flex; gap: 10px;">
+                    <input type="text" class="admin-input" placeholder="Search by Order ID or Customer..." style="width: 300px;">
+                    <select class="admin-input" style="width: 190px; padding: 9px 14px; font-size: 0.85rem;">
+                        <option value="all">All Membership Tiers</option>
+                        <option value="vip">VIP Obsidian Tier</option>
+                        <option value="gold">Gold Elite</option>
+                        <option value="regular">Active Buyers</option>
+                    </select>
+                </div>
+                <span style="font-size: 0.9rem; color: var(--gray-600);">Total Registered: <strong>3,420 Users</strong></span>
+            </div>
+
+            <!-- Customers Table -->
+            <div class="table-card">
+                <div class="table-card-header">
+                    <h3>Registered Customers</h3>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Customer Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Total Orders</th>
+                            <th>Lifetime Value</th>
+                            <th>Membership</th>
+                            <th>Quick Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#USR-104</span></td>
+                            <td><strong>Rohan Sharma</strong></td>
+                            <td>rohan.sharma@example.com</td>
+                            <td>+91 98201 44521</td>
+                            <td>6 Orders</td>
+                            <td><strong>₹28,490</strong></td>
+                            <td><span class="badge badge-success">VIP Member</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-user" class="action-btn view" title="View Customer Profile" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-block-user" class="action-btn block" title="Block / Suspend Customer" style="cursor: pointer;">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </label>
+                                    <label for="modal-delete-user" class="action-btn delete" title="Delete Customer Account" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#USR-103</span></td>
+                            <td><strong>Ananya Patel</strong></td>
+                            <td>ananya.p@example.com</td>
+                            <td>+91 97245 88120</td>
+                            <td>4 Orders</td>
+                            <td><strong>₹19,200</strong></td>
+                            <td><span class="badge badge-info">Standard</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-user" class="action-btn view" title="View Customer Profile" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-block-user" class="action-btn block" title="Block / Suspend Customer" style="cursor: pointer;">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </label>
+                                    <label for="modal-delete-user" class="action-btn delete" title="Delete Customer Account" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#USR-102</span></td>
+                            <td><strong>Vikram Kohli</strong></td>
+                            <td>vikram.k@example.com</td>
+                            <td>+91 98110 33499</td>
+                            <td>8 Orders</td>
+                            <td><strong>₹37,800</strong></td>
+                            <td><span class="badge badge-success">VIP Member</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-user" class="action-btn view" title="View Customer Profile" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-block-user" class="action-btn block" title="Block / Suspend Customer" style="cursor: pointer;">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </label>
+                                    <label for="modal-delete-user" class="action-btn delete" title="Delete Customer Account" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#USR-101</span></td>
+                            <td><strong>Kavita Sen</strong></td>
+                            <td>kavita.sen@example.com</td>
+                            <td>+91 94330 12890</td>
+                            <td>2 Orders</td>
+                            <td><strong>₹11,498</strong></td>
+                            <td><span class="badge badge-info">Standard</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-user" class="action-btn view" title="View Customer Profile" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-block-user" class="action-btn block" title="Block / Suspend Customer" style="cursor: pointer;">
+                                        <i class="fa-solid fa-ban"></i>
+                                    </label>
+                                    <label for="modal-delete-user" class="action-btn delete" title="Delete Customer Account" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====================================================================
+         1. PURE CSS POPUP MODAL: VIEW CUSTOMER PROFILE & ORDER HISTORY
+         ==================================================================== -->
+    <input type="checkbox" id="modal-view-user" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 580px;">
+            <div class="admin-modal-header">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 44px; height: 44px; background-color: var(--primary); color: #fff; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+                        RS
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 2px;">Rohan Sharma</h3>
+                        <span class="badge badge-success" style="font-size: 0.72rem;">VIP Member (Gold Tier)</span>
+                    </div>
+                </div>
+                <label for="modal-view-user" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <!-- Customer Details Summary -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; background-color: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+                <div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase;">Contact Info</span>
+                    <p style="font-size: 0.85rem; color: var(--dark-900); font-weight: 600; margin-top: 4px;">rohan.sharma@example.com</p>
+                    <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 2px;">+91 98201 44521</p>
+                </div>
+                <div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase;">Default Shipping Address</span>
+                    <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 4px;">Flat 402, Hill Road, Bandra West, Mumbai 400050</p>
+                </div>
+            </div>
+
+            <!-- Customer Stats Metrics -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px;">
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500);">Total Orders</span>
+                    <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--dark-900); margin-top: 2px;">6</h4>
+                </div>
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500);">Total Spent</span>
+                    <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--primary); margin-top: 2px;">₹28,490</h4>
+                </div>
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px; text-align: center;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500);">Joined</span>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--dark-900); margin-top: 4px;">Jan 2026</h4>
+                </div>
+            </div>
+
+            <!-- Recent Activity List -->
+            <div>
+                <h4 style="font-size: 0.88rem; font-weight: 700; color: var(--dark-900); margin-bottom: 8px;">Recent Order Activity</h4>
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;">
+                    <div>
+                        <strong style="color: var(--primary);">#NEX-8901</strong> — HyperSpeed Nitro (UK 9)
+                        <div style="font-size: 0.75rem; color: var(--gray-500);">Delivered on Today • ₹4,499</div>
+                    </div>
+                    <span class="badge badge-success">Completed</span>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                <label for="modal-view-user" class="btn-admin-outline" style="cursor: pointer;">Close Profile</label>
+                <a href="mailto:rohan.sharma@example.com" class="btn-admin-primary">
+                    <i class="fa-solid fa-envelope"></i> Send Direct Email
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         2. PURE CSS POPUP MODAL: BLOCK / SUSPEND CUSTOMER
+         ==================================================================== -->
+    <input type="checkbox" id="modal-block-user" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 460px; text-align: center;">
+            <div style="width: 56px; height: 56px; background-color: var(--warning-bg); color: var(--warning); border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">
+                <i class="fa-solid fa-ban"></i>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--dark-900); margin-bottom: 8px;">Block Customer Account?</h3>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 18px;">
+                Temporarily suspend login and order privileges for <strong>Rohan Sharma</strong> (#USR-104).
+            </p>
+
+            <div class="admin-form-group" style="text-align: left; margin-bottom: 22px;">
+                <label>Reason for Suspension</label>
+                <select class="admin-input" style="width: 100%;">
+                    <option>Suspicious Order Fraud Activity</option>
+                    <option>Repeated COD Order Rejections</option>
+                    <option>Payment Chargeback Dispute</option>
+                    <option>Terms of Service Violation</option>
+                </select>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <label for="modal-block-user" class="btn-admin-outline" style="cursor: pointer;">Cancel</label>
+                <button type="button" class="btn-admin-primary" style="background-color: var(--warning-text);">
+                    <i class="fa-solid fa-ban"></i> Confirm Suspension
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         3. PURE CSS POPUP MODAL: DELETE CUSTOMER ACCOUNT
+         ==================================================================== -->
+    <input type="checkbox" id="modal-delete-user" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 440px; text-align: center;">
+            <div style="width: 56px; height: 56px; background-color: var(--danger-bg); color: var(--danger); border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">
+                <i class="fa-solid fa-user-xmark"></i>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--dark-900); margin-bottom: 8px;">Delete Customer Profile?</h3>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 24px;">
+                Are you sure you want to permanently delete customer account <strong>#USR-104</strong>? All saved addresses and reward points will be removed.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <label for="modal-delete-user" class="btn-admin-outline" style="cursor: pointer;">Cancel</label>
+                <button type="button" class="btn-admin-primary" style="background-color: var(--danger);">
+                    <i class="fa-solid fa-trash"></i> Yes, Delete User
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+/* ====================================================================
+   SHOE NEXUS - Pure HTML & CSS Auth Stylesheet (login.css)
+   Pure CSS Tab Switching (Zero JS) • Electric Orange & Obsidian Theme
+   ==================================================================== */
+
+.login-body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 30%, rgba(255, 85, 0, 0.15) 0%, transparent 60%),
+                linear-gradient(135deg, #07090D 0%, #0B0E14 50%, #050608 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    font-family: var(--font-body);
+    color: #F8FAFC;
+    position: relative;
+    overflow-y: auto;
+}
+
+.login-glow-aura {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 85, 0, 0.22) 0%, rgba(255, 85, 0, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    background: rgba(14, 20, 32, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    width: 100%;
+    max-width: 460px;
+    padding: 42px 36px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 85, 0, 0.15);
+}
+
+.login-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.login-logo .logo-box {
+    width: 44px;
+    height: 44px;
+    background: var(--primary-gradient);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #fff;
+    box-shadow: 0 4px 16px var(--primary-glow);
+}
+
+.login-logo h2 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.5px;
+}
+
+.login-logo span.highlight {
+    color: var(--primary);
+}
+
+.login-subtitle {
+    text-align: center;
+    color: var(--gray-400);
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+}
+
+/* PURE CSS TAB CONTROLLER */
+.auth-tab-radio {
+    display: none;
+}
+
+.auth-switch-tabs {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    padding: 4px;
+    margin-bottom: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-tab-label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    font-family: var(--font-heading);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--gray-400);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.auth-tab-label:hover {
+    color: #fff;
+}
+
+#radio-tab-login:checked ~ .auth-switch-tabs label[for="radio-tab-login"],
+#radio-tab-register:checked ~ .auth-switch-tabs label[for="radio-tab-register"] {
+    background: var(--primary-gradient);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255, 85, 0, 0.4);
+}
+
+.auth-pane-login,
+.auth-pane-register {
+    display: none;
+}
+
+#radio-tab-login:checked ~ .auth-pane-login {
+    display: block;
+    animation: fadeInView 0.25s ease forwards;
+}
+
+#radio-tab-register:checked ~ .auth-pane-register {
+    display: block;
+    animation: fadeInView 0.25s ease forwards;
+}
+
+@keyframes fadeInView {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-form-group {
+    margin-bottom: 18px;
+}
+
+.auth-form-group label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--gray-300);
+    margin-bottom: 8px;
+}
+
+.auth-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.auth-input-wrapper i {
+    position: absolute;
+    left: 16px;
+    color: var(--gray-500);
+    font-size: 0.95rem;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 13px 16px 13px 44px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: #fff;
+    font-size: 0.92rem;
+    transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(255, 85, 0, 0.2);
+}
+
+.auth-input::placeholder {
+    color: var(--gray-500);
+}
+
+.auth-options-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.84rem;
+    margin-bottom: 22px;
+}
+
+.auth-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-400);
+    cursor: pointer;
+}
+
+.auth-checkbox-label input {
+    accent-color: var(--primary);
+}
+
+.auth-link {
+    color: var(--primary-light);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-link:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 24px 0;
+    color: var(--gray-500);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.auth-social-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.auth-social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    color: #fff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.auth-social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-footer-nav {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--gray-400);
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — SHOE NEXUS</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Master Stylesheet (Clean White Theme) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Checkbox Toggle -->
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-checkbox">
+    <label for="mobile-nav-toggle" class="mobile-drawer-overlay"></label>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span>SHOE<span class="highlight">NEXUS</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline btn-sm header-auth-btn">
+                    <i class="fa-regular fa-user"></i> Login / Register
+                </a>
+                <a href="shop.html" class="header-icon-btn" title="Search Shoes">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="cart.html" class="header-icon-btn" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+                <label for="mobile-nav-toggle" class="hamburger-btn" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-nav-drawer">
+        <div>
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <span>SHOE<span class="highlight">NEXUS</span></span>
+                </a>
+                <label for="mobile-nav-toggle" class="drawer-close-btn" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="shop.html">Shop Shoes <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="about.html" class="active">About Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="blog.html">Sneaker Blog <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html">Contact Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="cart.html">My Cart <i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="login.html" class="btn btn-primary btn-block">
+                <i class="fa-regular fa-user"></i> Login / Register
+            </a>
+            <a href="admin/login.html" class="btn btn-outline btn-block" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-lock"></i> Admin Console
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+                    <span>About Us</span>
+                </div>
+                <h1 class="page-title">Our Story & Mission</h1>
+                 <p style="color: var(--gray-400); font-size: 1.05rem;">
+                   Born in 2026, Shoe Nexus merges cutting-edge foam biomechanics with modern street aesthetics.
+                </p>
+            </div>
+        </section>
+
+        <!-- Brand Story Section -->
+        <section class="container section-padding" style="padding-top: 0;">
+            <div class="hero-grid" style="align-items: center;">
+                <div>
+                    <h2 class="section-title">Redefining Everyday Footwear Comfort</h2>
+                    <p class="hero-desc" style="margin-bottom: 16px;">
+                        Founded with a passion for athletic performance and street culture, <strong>SHOE NEXUS</strong> bridges the gap between ergonomic engineering and modern street style.
+                    </p>
+                    <p class="hero-desc">
+                        Every sneaker in our collection is curated for durability, arch support, and impact absorption — ensuring you look sharp whether running a marathon or navigating the city.
+                    </p>
+                    <div style="margin-top: 24px;">
+                        <a href="shop.html" class="btn btn-primary">
+                            Explore Collections <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-img-box">
+                        <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?auto=format&fit=crop&w=800&q=80" alt="Shoe Nexus Craftsmanship">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Craftsmanship Pillars -->
+        <section class="section-padding" style="background-color: var(--white); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Engineering Quality</span>
+                    <h2 class="section-title">Built for Performance</h2>
+                    <p class="section-subtitle">Three pillars that define every pair in our catalog.</p>
+                </div>
+
+                <div class="info-cards-grid">
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-feather-pointed"></i></div>
+                        <h4>AeroKnit Mesh</h4>
+                        <p>Ultra-breathable engineered knit fabric designed to keep feet cool and dry during intense workouts.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-shield-heart"></i></div>
+                        <h4>Responsive Cushioning</h4>
+                        <p>High-energy rebound foam midsoles absorb impact and return energy with every stride.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+                        <h4>High-Grip Rubber</h4>
+                        <p>Multi-surface traction outsoles provide exceptional grip on wet roads, court floors, and dirt tracks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="container section-padding">
+            <div class="section-header">
+                <span class="section-tag">Core Values</span>
+                <h2 class="section-title">What Drives Us</h2>
+                <p class="section-subtitle">Our commitment to runners, sneakerheads, and creators.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="feature-info">
+                        <h4>100% Genuine</h4>
+                        <p>Direct from verified makers</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <div class="feature-info">
+                        <h4>Eco Packaging</h4>
+                        <p>Recycled biodegradable boxes</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-tags"></i></div>
+                    <div class="feature-info">
+                        <h4>Fair Pricing</h4>
+                        <p>No artificial markups</p>
+                    </div>
+                </div>
+
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="feature-info">
+                        <h4>Community First</h4>
+                        <p>Supporting local running clubs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span>SHOE<span class="highlight">NEXUS</span></span>
+                    </a>
+                    <p>India's premier online destination for authentic athletic, running, and street lifestyle footwear.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop Catalog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Sneaker Blog</a></li>
+                        <li><a href="contact.html">Contact & Help</a></li>
+                        <!-- <li><a href="admin/login.html" style="color: var(--primary); font-weight: 600;"><i class="fa-solid fa-lock"></i> Admin Panel</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=running">Running Shoes</a></li>
+                        <li><a href="shop.html?category=sneakers">Street Sneakers</a></li>
+                        <li><a href="shop.html?category=sports">Court & Basketball</a></li>
+                        <li><a href="shop.html?category=casual">Casual Slip-ons</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p style="font-size: 0.88rem; color: var(--gray-600);">Subscribe for limited releases and discounts.</p>
+                    <form class="newsletter-form" action="#" method="GET">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Join</button>
+                    </form>
+                </div>
+            </div>
+
+             <div class="footer-bottom">
+                <div>
+                    © 2026 <strong>SHOE NEXUS</strong>.
+                </div>
+                <div style="display: flex; gap: 24px;">
+                    <a href="contact.html">Privacy Policy</a>
+                    <a href="contact.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

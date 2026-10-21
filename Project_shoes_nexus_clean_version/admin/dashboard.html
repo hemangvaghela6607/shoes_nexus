@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — SHOE NEXUS</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Admin Master Stylesheet (Clean White Theme) -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Admin Clean White Sidebar -->
+    <aside class="admin-sidebar">
+        <div>
+            <div class="sidebar-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h3>SHOE NEXUS</h3>
+                    <span class="tag">ADMIN CONSOLE</span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <span class="menu-label">Overview</span>
+                <a href="dashboard.html" class="sidebar-link active">
+                    <span class="link-left"><i class="fa-solid fa-chart-pie"></i> Dashboard</span>
+                </a>
+
+                <span class="menu-label">Management</span>
+                <a href="products.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-shoe-prints"></i> Products Catalog</span>
+                </a>
+                <a href="orders.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-truck-fast"></i> Orders & Delivery</span>
+                </a>
+                <a href="users.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-users"></i> Customers</span>
+                </a>
+                <a href="messages.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-envelope-open-text"></i> Messages</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout Admin</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <h1>Executive Overview</h1>
+            <div class="topbar-actions">
+                <div class="admin-user-pill">
+                    <div class="admin-avatar">A</div>
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--dark-900);">Admin Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Body Dashboard -->
+        <div class="admin-body">
+            <!-- 4 Metric Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Total Revenue</span>
+                        <div class="stat-card-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                    </div>
+                    <div class="stat-card-value">₹48,24,500</div>
+                    <div class="stat-card-growth"><i class="fa-solid fa-arrow-trend-up"></i> +14.2% vs last month</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Total Orders</span>
+                        <div class="stat-card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    </div>
+                    <div class="stat-card-value">1,280</div>
+                    <div class="stat-card-growth"><i class="fa-solid fa-arrow-trend-up"></i> +8.6% new orders</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Active Models</span>
+                        <div class="stat-card-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+                    </div>
+                    <div class="stat-card-value">36</div>
+                    <div style="font-size: 0.8rem; color: var(--gray-500); margin-top: 4px;">4 Active Categories</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <span class="stat-card-title">Pending Inquiries</span>
+                        <div class="stat-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    </div>
+                    <div class="stat-card-value">4</div>
+                    <div style="font-size: 0.8rem; color: var(--warning-text); margin-top: 4px;"><i class="fa-solid fa-clock"></i> 2 Require Action</div>
+                </div>
+            </div>
+
+            <!-- Recent Orders Table -->
+            <div class="table-card">
+                <div class="table-card-header">
+                    <h3>Recent Customer Orders</h3>
+                    <a href="orders.html" class="btn-admin-primary" style="padding: 6px 14px; font-size: 0.82rem;">View All Orders</a>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Footwear Item</th>
+                            <th>Amount</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: var(--primary);">#NEX-8901</strong></td>
+                            <td>Rohan Sharma</td>
+                            <td>HyperSpeed Nitro Marathon (UK 9)</td>
+                            <td>₹4,499</td>
+                            <td>Today, 14:20</td>
+                            <td><span class="badge badge-success">Delivered</span></td>
+                            <td>
+                                <label for="modal-view-dash-order" class="action-btn view" title="View Order" style="cursor: pointer;">
+                                    <i class="fa-solid fa-eye"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--primary);">#NEX-8900</strong></td>
+                            <td>Ananya Patel</td>
+                            <td>Air Jordan Retro High (UK 8)</td>
+                            <td>₹6,999</td>
+                            <td>Today, 11:05</td>
+                            <td><span class="badge badge-warning">In Transit</span></td>
+                            <td>
+                                <label for="modal-view-dash-order" class="action-btn view" title="View Order" style="cursor: pointer;">
+                                    <i class="fa-solid fa-eye"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--primary);">#NEX-8899</strong></td>
+                            <td>Vikram Kohli</td>
+                            <td>Puma Clyde All-Pro Court (UK 9)</td>
+                            <td>₹3,799</td>
+                            <td>Yesterday</td>
+                            <td><span class="badge badge-info">Processing</span></td>
+                            <td>
+                                <label for="modal-view-dash-order" class="action-btn view" title="View Order" style="cursor: pointer;">
+                                    <i class="fa-solid fa-eye"></i>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--primary);">#NEX-8898</strong></td>
+                            <td>Kavita Sen</td>
+                            <td>Nike ZoomX Vaporfly (UK 7)</td>
+                            <td>₹8,499</td>
+                            <td>Yesterday</td>
+                            <td><span class="badge badge-success">Delivered</span></td>
+                            <td>
+                                <label for="modal-view-dash-order" class="action-btn view" title="View Order" style="cursor: pointer;">
+                                    <i class="fa-solid fa-eye"></i>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Top Selling Footwear Table -->
+            <div class="table-card">
+                <div class="table-card-header">
+                    <h3>Top Performing Footwear</h3>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Shoe Model</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Units Sold</th>
+                            <th>Stock Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>HyperSpeed Nitro Marathon</strong></td>
+                            <td>Running</td>
+                            <td>₹4,499</td>
+                            <td>342 pairs</td>
+                            <td><span class="badge badge-success">In Stock (48)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Air Jordan Retro High</strong></td>
+                            <td>Sneakers</td>
+                            <td>₹6,999</td>
+                            <td>280 pairs</td>
+                            <td><span class="badge badge-warning">Low Stock (8)</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vans Old Skool Skate</strong></td>
+                            <td>Casual</td>
+                            <td>₹2,999</td>
+                            <td>215 pairs</td>
+                            <td><span class="badge badge-success">In Stock (62)</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====================================================================
+         PURE CSS POPUP MODAL: QUICK VIEW RECENT ORDER
+         ==================================================================== -->
+    <input type="checkbox" id="modal-view-dash-order" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 580px;">
+            <div class="admin-modal-header">
+                <div>
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-receipt" style="color: var(--primary);"></i> Order Details #NEX-8901
+                    </h3>
+                    <span style="font-size: 0.8rem; color: var(--gray-500);">Placed Today at 14:20 PM</span>
+                </div>
+                <label for="modal-view-dash-order" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <!-- Customer & Shipping Summary -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; background-color: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 14px; margin-bottom: 18px;">
+                <div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase;">Customer</span>
+                    <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--dark-900); margin-top: 2px;">Rohan Sharma</h4>
+                    <p style="font-size: 0.85rem; color: var(--gray-600);">rohan.sharma@example.com</p>
+                </div>
+                <div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--gray-400); text-transform: uppercase;">Delivery Address</span>
+                    <p style="font-size: 0.85rem; color: var(--gray-600); margin-top: 2px;">Bandra West, Mumbai 400050</p>
+                </div>
+            </div>
+
+            <!-- Item -->
+            <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h4 style="font-size: 0.92rem; font-weight: 700; color: var(--dark-900);">HyperSpeed Nitro Marathon</h4>
+                    <span style="font-size: 0.8rem; color: var(--gray-500);">Size: UK 9 • Qty: 1</span>
+                </div>
+                <strong style="font-size: 1rem; color: var(--primary);">₹4,499</strong>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 14px; border-top: 1px solid var(--gray-200);">
+                <label for="modal-view-dash-order" class="btn-admin-outline" style="cursor: pointer;">Close</label>
+                <a href="orders.html" class="btn-admin-primary">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Orders Page
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOE NEXUS — Premium Footwear & Sneakers</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Master Stylesheet (Pure HTML5 & CSS3 - Clean White Theme) -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* ================================
+   LUXURY CAMPAIGN BANNER
+   ================================ */
+
+.campaign-banner {
+    width: 100%;
+    background: #111116;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 32px;
+    padding: 76px 74px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+}
+
+/* Subtle luxury glow */
+.campaign-banner::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background: rgba(197, 168, 128, 0.07);
+    border-radius: 50%;
+    filter: blur(100px);
+    left: -180px;
+    top: -180px;
+    pointer-events: none;
+}
+
+/* Main two-column layout */
+.campaign-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+    gap: 70px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================
+   LEFT CONTENT
+   ================================ */
+
+.campaign-grid > div:first-child {
+    padding-left: 2px;
+}
+
+.campaign-grid .section-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 20px;
+    border-radius: 30px;
+
+    background: rgba(197, 168, 128, 0.16) !important;
+    color: #f1dfbd !important;
+
+    border: 1px solid rgba(197, 168, 128, 0.55) !important;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+/* Heading */
+.campaign-grid h2 {
+    color: #ffffff;
+    font-size: clamp(2.2rem, 4vw, 3.15rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -1.5px;
+    margin: 25px 0 22px !important;
+}
+
+/* Gold / luxury serif text */
+.campaign-grid .luxury-serif {
+    color: #f1dfbd;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+/* Description */
+.campaign-grid p {
+    color: #c9c9d0 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.75 !important;
+    max-width: 510px !important;
+    margin-bottom: 32px !important;
+}
+
+/* ================================
+   GOLD BUTTON
+   ================================ */
+
+.campaign-grid .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    min-height: 60px;
+    padding: 0 27px;
+
+    background: linear-gradient(
+        135deg,
+        #e6c17a,
+        #b88a43
+    );
+
+    color: #111116 !important;
+
+    border: none;
+    border-radius: 14px;
+
+    font-size: 1rem;
+    font-weight: 800;
+    text-decoration: none;
+
+    box-shadow: 0 12px 28px rgba(197, 168, 128, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.campaign-grid .btn-gold:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow: 0 18px 35px rgba(197, 168, 128, 0.35);
+}
+
+.campaign-grid .btn-gold i {
+    font-size: 0.95rem;
+}
+
+/* ================================
+   RIGHT IMAGE
+   ================================ */
+
+.campaign-grid > div:last-child {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Image */
+.campaign-grid > div:last-child img {
+    width: 100%;
+    max-width: 525px;
+    height: 785px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 24px !important;
+
+    border: 1px solid rgba(197, 168, 128, 0.55) !important;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.03);
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+/* Very subtle image hover */
+.campaign-grid > div:last-child img:hover {
+    transform: scale(1.015);
+}
+
+
+/* ================================
+   TABLET
+   ================================ */
+
+@media (max-width: 1000px) {
+
+    .campaign-banner {
+        padding: 55px 45px;
+    }
+
+    .campaign-grid {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 40px;
+    }
+
+    .campaign-grid > div:last-child img {
+        height: 600px;
+    }
+
+    .campaign-grid h2 {
+        font-size: 2.3rem !important;
+    }
+}
+
+
+/* ================================
+   MOBILE
+   ================================ */
+
+@media (max-width: 768px) {
+
+    .campaign-banner {
+        padding: 45px 28px;
+        border-radius: 24px;
+    }
+
+    .campaign-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .campaign-grid h2 {
+        font-size: 2.2rem !important;
+    }
+
+    .campaign-grid p {
+        font-size: 0.98rem !important;
+    }
+
+    .campaign-grid > div:last-child img {
+        height: 500px;
+        max-width: 100%;
+    }
+}
+
+
+/* ================================
+   SMALL MOBILE
+   ================================ */
+
+@media (max-width: 480px) {
+
+    .campaign-banner {
+        padding: 35px 20px;
+        border-radius: 20px;
+    }
+
+    .campaign-grid h2 {
+        font-size: 1.9rem !important;
+    }
+
+    .campaign-grid .section-tag {
+        font-size: 0.7rem;
+        padding: 8px 15px;
+    }
+
+    .campaign-grid .btn-gold {
+        width: 100%;
+        min-height: 56px;
+    }
+
+    .campaign-grid > div:last-child img {
+        height: 420px;
+        border-radius: 18px !important;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <!-- Mobile Drawer Checkbox Toggle (Zero JS) -->
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-checkbox">
+    <label for="mobile-nav-toggle" class="mobile-drawer-overlay"></label>
+
+    <!-- Main Navigation Header (Clean White Header) -->
+    <header class="site-header">
+        <div class="container navbar">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span>SHOE<span class="highlight">NEXUS</span></span>
+            </a>
+
+            <!-- Desktop Nav Menu -->
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline btn-sm header-auth-btn">
+                    <i class="fa-regular fa-user"></i> Login / Register
+                </a>
+                <a href="shop.html" class="header-icon-btn" title="Search Shoes">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="cart.html" class="header-icon-btn" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+                <!-- Mobile Hamburger Button -->
+                <label for="mobile-nav-toggle" class="hamburger-btn" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-nav-drawer">
+        <div>
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <span>SHOE<span class="highlight">NEXUS</span></span>
+                </a>
+                <label for="mobile-nav-toggle" class="drawer-close-btn" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="index.html" class="active">Home <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="shop.html">Shop Shoes <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="about.html">About Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="blog.html">Sneaker Blog <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html">Contact Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="cart.html">My Cart <i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="login.html" class="btn btn-primary btn-block">
+                <i class="fa-regular fa-user"></i> Login / Register
+            </a>
+            <a href="admin/login.html" class="btn btn-outline btn-block" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-lock"></i> Admin Console
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Hero Section (Clean Warm Glow) -->
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="section-tag">New Season 2026</span>
+                    <h1 class="hero-title">
+                        Engineered For <span>Speed</span>, Crafted For Style.
+                    </h1>
+                    <p class="hero-desc">
+                        Explore our curated selection of high-traction running sneakers, retro street classics, and elite performance footwear built for comfort.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="shop.html" class="btn btn-primary">
+                            Explore Catalog <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#categories" class="btn btn-outline">
+                            Browse Categories
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>50K+</h3>
+                            <p>Pairs Shipped</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>4.9 ★</h3>
+                            <p>Customer Rating</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Authentic Leather</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-img-box">
+                        <img src="D:\MU_SEM_3\WT\Project_shoes_nexus\clean_version\images\image.png" alt="Nike Air Sneaker">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Bar -->
+        <section class="features-bar">
+            <div class="container features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <div class="feature-info">
+                        <h4>Free Express Delivery</h4>
+                        <p>Orders over ₹1,999</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="feature-info">
+                        <h4>100% Authentic</h4>
+                        <p>Direct brand guarantee</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-rotate-left"></i></div>
+                    <div class="feature-info">
+                        <h4>30 Days Return</h4>
+                        <p>Hassle-free exchanges</p>
+                    </div>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div class="feature-info">
+                        <h4>24/7 Support</h4>
+                        <p>Expert customer help</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="section-padding" id="categories">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Collections</span>
+                    <h2 class="section-title">Shop by Category</h2>
+                    <p class="section-subtitle">Find the perfect pair tailored for sports, running, and lifestyle comfort.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <a href="shop.html?category=running" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80" alt="Running Shoes">
+                        <div class="category-overlay">
+                            <h3>Running Shoes</h3>
+                            <span>24+ Models</span>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=sneakers" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80" alt="Street Sneakers">
+                        <div class="category-overlay">
+                            <h3>Street Sneakers</h3>
+                            <span>36+ Models</span>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=sports" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80" alt="Court & Basketball">
+                        <div class="category-overlay">
+                            <h3>Court & Sports</h3>
+                            <span>18+ Models</span>
+                        </div>
+                    </a>
+
+                    <a href="shop.html?category=casual" class="category-card">
+                        <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=600&q=80" alt="Casual Shoes">
+                        <div class="category-overlay">
+                            <h3>Casual Slip-ons</h3>
+                            <span>15+ Models</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </br></br>
+        <!-- Luxury Capsule Spotlight Banner -->
+        <section class="container">
+            <div class="campaign-banner">
+                <div class="campaign-grid">
+                    <div>
+                        <span class="section-tag" style="background: rgba(197, 168, 128, 0.2); color: var(--gold-light); border-color: var(--gold-border);">
+                            Limited Capsule 2026
+                        </span>
+                        <h2 style="font-family: var(--font-heading); font-size: 2.6rem; font-weight: 900; line-height: 1.15; margin: 14px 0 16px 0;">
+                            The Black & Gold <br><span class="luxury-serif">Heritage Drop</span>
+                        </h2>
+                        <p style="color: var(--gray-300); font-size: 1.05rem; line-height: 1.7; margin-bottom: 28px; max-width: 480px;">
+                            Individually numbered pairs cast with handcrafted carbon soles, gold-embossed crests, and velvet microfiber linings.
+                        </p>
+                        <a href="shop.html" class="btn btn-gold">
+                            <i class="fa-solid fa-gem"></i> Acquire Drop Edition
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJeHVmZkY4Csd1dQ5xzwx-azZSiTTJ99H1XNbP-xkjGQ&s=10" alt="Heritage Gold" style="border-radius: var(--radius-lg); border: 1px solid var(--gold-border); box-shadow: 0 15px 40px rgba(0,0,0,0.5);">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </br></br>
+
+        <!-- Featured Drops Section -->
+        <section class="section-padding" style="background-color: var(--white); border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Featured Drops</span>
+                    <h2 class="section-title">Trending Footwear</h2>
+                    <p class="section-subtitle">Top performance sneakers engineered for maximum comfort and traction.</p>
+                </div>
+
+                <div class="product-grid">
+                    
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=80" alt="Adidas Forum Mid Classic">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Streetwear</span>
+                            <h3 class="product-name">Adidas Forum Mid Classic</h3>
+                            <div class="product-rating">
+                                <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                                <span>4.8</span>
+                                <span class="review-count">(112)</span>
+                            </div>
+                            <div class="product-sizes">
+                                <span class="size-pill">UK 8</span>
+                                <span class="size-pill selected">UK 9</span>
+                                <span class="size-pill">UK 10</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <span class="current-price">₹5,299</span>
+                                    <span class="original-price">₹6,499</span>
+                                </div>
+                                <a href="cart.html" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-bag-shopping"></i> Add
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <span class="product-badge sale">Sale</span>
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=500&q=80" alt="Vans Old Skool Suede">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Casual</span>
+                            <h3 class="product-name">Vans Old Skool Skate</h3>
+                            <div class="product-rating">
+                                <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                <span>4.9</span>
+                                <span class="review-count">(310)</span>
+                            </div>
+                            <div class="product-sizes">
+                                <span class="size-pill">UK 6</span>
+                                <span class="size-pill">UK 7</span>
+                                <span class="size-pill selected">UK 8</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <span class="current-price">₹2,999</span>
+                                    <span class="original-price">₹3,999</span>
+                                </div>
+                                <a href="cart.html" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-bag-shopping"></i> Add
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <span class="product-badge">New</span>
+                        <div class="product-media">
+                            <img src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=500&q=80" alt="Nike ZoomX Vaporfly">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Running</span>
+                            <h3 class="product-name">Nike ZoomX Vaporfly Elite</h3>
+                            <div class="product-rating">
+                                <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                <span>5.0</span>
+                                <span class="review-count">(195)</span>
+                            </div>
+                            <div class="product-sizes">
+                                <span class="size-pill">UK 8</span>
+                                <span class="size-pill selected">UK 9</span>
+                                <span class="size-pill">UK 10</span>
+                            </div>
+                            <div class="product-footer">
+                                <div class="product-price">
+                                    <span class="current-price">₹8,499</span>
+                                    <span class="original-price">₹9,999</span>
+                                </div>
+                                <a href="cart.html" class="btn btn-primary btn-sm">
+                                    <i class="fa-solid fa-bag-shopping"></i> Add
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="shop.html" class="btn btn-dark">
+                        View All Shoes <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Customer Reviews Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Testimonials</span>
+                    <h2 class="section-title">What Runners Say</h2>
+                    <p class="section-subtitle">Real experiences from athletes and sneaker enthusiasts across India.</p>
+                </div>
+
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="review-text">"The Nitro Marathon shoes give unreal bounce. Delivery took only 2 days in Mumbai. Best shoe purchase this year!"</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">RS</div>
+                            <div class="reviewer-info">
+                                <h5>Rohan Sharma</h5>
+                                <span>Marathon Runner, Mumbai</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="review-text">"100% authentic sneakers with premium packaging. Size exchange was seamless and fast."</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">AP</div>
+                            <div class="reviewer-info">
+                                <h5>Ananya Patel</h5>
+                                <span>Sneaker Enthusiast, Ahmedabad</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        <p class="review-text">"Clean design, lightweight sole, and great arch support for gym workouts. Highly recommend!"</p>
+                        <div class="reviewer">
+                            <div class="reviewer-avatar">VK</div>
+                            <div class="reviewer-info">
+                                <h5>Vikram Kohli</h5>
+                                <span>Fitness Coach, Delhi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span>SHOE<span class="highlight">NEXUS</span></span>
+                    </a>
+                    <p>India's premier online destination for authentic athletic, running, and street lifestyle footwear.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop Catalog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Sneaker Blog</a></li>
+                        <li><a href="contact.html">Contact & Help</a></li>
+                        <!-- <li><a href="admin/login.html" style="color: var(--primary); font-weight: 600;"><i class="fa-solid fa-lock"></i> Admin Panel</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=running">Running Shoes</a></li>
+                        <li><a href="shop.html?category=sneakers">Street Sneakers</a></li>
+                        <li><a href="shop.html?category=sports">Court & Basketball</a></li>
+                        <li><a href="shop.html?category=casual">Casual Slip-ons</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p style="font-size: 0.88rem; color: var(--gray-600);">Subscribe for limited releases and discounts.</p>
+                    <form class="newsletter-form" action="#" method="GET">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Join</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    © 2026 <strong>SHOE NEXUS</strong>.
+                </div>
+                <div style="display: flex; gap: 24px;">
+                    <a href="contact.html">Privacy Policy</a>
+                    <a href="contact.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

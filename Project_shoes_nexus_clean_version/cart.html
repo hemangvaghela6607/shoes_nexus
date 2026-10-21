@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart & Checkout — SHOE NEXUS</title>
+
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* ================= ORDER SUCCESS POPUP ================= */
+
+        .order-popup {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .order-popup-box {
+            width: 100%;
+            max-width: 430px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30);
+            animation: popupShow 0.3s ease;
+        }
+
+        .success-icon {
+            width: 78px;
+            height: 78px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #dcfce7;
+            color: #16a34a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 34px;
+        }
+
+        .order-popup-box h2 {
+            margin: 0 0 10px;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        .order-popup-box p {
+            margin: 0 0 20px;
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        .order-message {
+            background: #f5f3ff;
+            color: #5b21b6;
+            padding: 13px;
+            border-radius: 10px;
+            margin-bottom: 22px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .order-message i {
+            margin-right: 6px;
+        }
+
+        .order-popup-close {
+            border: none;
+            cursor: pointer;
+        }
+
+        @keyframes popupShow {
+            from {
+                opacity: 0;
+                transform: scale(0.85);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Mobile popup */
+        @media (max-width: 480px) {
+            .order-popup-box {
+                padding: 30px 20px;
+            }
+
+            .order-popup-box h2 {
+                font-size: 24px;
+            }
+
+            .success-icon {
+                width: 68px;
+                height: 68px;
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Mobile Drawer Checkbox Toggle -->
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-checkbox">
+    <label for="mobile-nav-toggle" class="mobile-drawer-overlay"></label>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="container navbar">
+
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <span>SHOE<span class="highlight">NEXUS</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <a href="login.html"
+                   class="btn btn-outline btn-sm header-auth-btn">
+                    <i class="fa-regular fa-user"></i>
+                    Login / Register
+                </a>
+
+                <a href="shop.html"
+                   class="header-icon-btn"
+                   title="Search Shoes">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a href="cart.html"
+                   class="header-icon-btn"
+                   title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+
+                <label for="mobile-nav-toggle"
+                       class="hamburger-btn"
+                       aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= MOBILE DRAWER ================= -->
+    <aside class="mobile-nav-drawer">
+
+        <div>
+
+            <div class="mobile-drawer-header">
+
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span>SHOE<span class="highlight">NEXUS</span></span>
+                </a>
+
+                <label for="mobile-nav-toggle"
+                       class="drawer-close-btn"
+                       aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+
+            </div>
+
+            <div class="mobile-nav-links">
+                <a href="index.html">
+                    Home
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="shop.html">
+                    Shop Shoes
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="about.html">
+                    About Us
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="blog.html">
+                    Sneaker Blog
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+                <a href="cart.html" class="active">
+                    My Cart
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+            </div>
+
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+
+            <a href="login.html" class="btn btn-primary btn-block">
+                <i class="fa-regular fa-user"></i>
+                Login / Register
+            </a>
+
+            <a href="admin/login.html"
+               class="btn btn-outline btn-block"
+               style="font-size: 0.85rem;">
+                <i class="fa-solid fa-lock"></i>
+                Admin Console
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- Page Banner -->
+        <section class="page-banner">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+
+                    <i class="fa-solid fa-chevron-right"
+                       style="font-size: 0.7rem;"></i>
+
+                    <span>Shopping Cart</span>
+                </div>
+
+                <h1 class="page-title">
+                    Your Shopping Bag
+                </h1>
+
+                <p style="color: var(--gray-400); font-size: 1.05rem;">
+                    Review your selected footwear items and proceed to secure checkout.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- ================= CART ================= -->
+        <section class="container section-padding"
+                 style="padding-top: 0;">
+
+            <div class="cart-layout">
+
+                <!-- ================= CART ITEMS ================= -->
+                <div>
+
+                    <div class="cart-table-card">
+
+                        <!-- Item 1 -->
+                        <div class="cart-item">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80"
+                                alt="HyperSpeed Nitro"
+                                class="cart-item-img">
+
+                            <div class="cart-item-info">
+
+                                <h4>
+                                    HyperSpeed Nitro Marathon
+                                </h4>
+
+                                <p>
+                                    Running Shoes • Size: UK 9 • Crimson
+                                </p>
+
+                                <div style="margin-top: 6px;
+                                            font-weight: 700;
+                                            color: var(--primary);">
+                                    ₹4,499
+                                </div>
+
+                            </div>
+
+                            <div class="cart-qty-ctrl">
+
+                                <button type="button">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                                <span>1</span>
+
+                                <button type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+
+                            </div>
+
+                            <div style="text-align: right;">
+
+                                <a href="#"
+                                   class="cart-item-remove"
+                                   title="Remove Item"
+                                   style="color: var(--danger);">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="cart-item">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=200&q=80"
+                                alt="Air Jordan Retro"
+                                class="cart-item-img">
+
+                            <div class="cart-item-info">
+
+                                <h4>
+                                    Air Jordan Retro High
+                                </h4>
+
+                                <p>
+                                    Street Sneakers • Size: UK 9 • Slate Grey
+                                </p>
+
+                                <div style="margin-top: 6px;
+                                            font-weight: 700;
+                                            color: var(--primary);">
+                                    ₹6,999
+                                </div>
+
+                            </div>
+
+                            <div class="cart-qty-ctrl">
+
+                                <button type="button">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                                <span>1</span>
+
+                                <button type="button">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+
+                            </div>
+
+                            <div style="text-align: right;">
+
+                                <a href="#"
+                                   class="cart-item-remove"
+                                   title="Remove Item"
+                                   style="color: var(--danger);">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Cart Actions -->
+                    <div style="display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                margin-top: 20px;
+                                flex-wrap: wrap;
+                                gap: 12px;">
+
+                        <a></a>
+                    
+
+                        <button type="button"
+                                class="btn btn-outline btn-sm"
+                                style="color: var(--danger);
+                                       border-color: var(--gray-300);">
+                            Clear Bag
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= ORDER SUMMARY ================= -->
+                <div class="order-summary-card">
+
+                    <h3 class="summary-title">
+                        Order Summary
+                    </h3>
+
+                    <div class="summary-row">
+                        <span>Items Subtotal</span>
+                        <span style="font-weight: 600;
+                                     color: var(--dark-900);">
+                            ₹11,498
+                        </span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>VIP Member Discount (10%)</span>
+                        <span style="font-weight: 600;
+                                     color: var(--success);">
+                            -₹1,150
+                        </span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span style="font-weight: 600;
+                                     color: var(--success);">
+                            FREE
+                        </span>
+                    </div>
+
+                    <div class="summary-row">
+                        <span>GST Included (12%)</span>
+                        <span>₹1,241</span>
+                    </div>
+
+                    <div class="summary-row total">
+                        <span>Total Payable</span>
+                        <span>₹10,348</span>
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div style="margin: 20px 0;">
+
+                        <label style="font-size: 0.85rem;
+                                      font-weight: 600;
+                                      color: var(--dark-800);
+                                      display: block;
+                                      margin-bottom: 6px;">
+                            Have a Promo Coupon?
+                        </label>
+
+                        <div style="display: flex; gap: 6px;">
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                placeholder="e.g. NEXUS10"
+                                value="NEXUS10"
+                                style="padding: 8px 12px;
+                                       font-size: 0.9rem;">
+
+                            <button type="button"
+                                    class="btn btn-dark btn-sm">
+                                Apply
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <br>
+
+                    <!-- ================= CHECKOUT BUTTON ================= -->
+                    <button type="button"
+                            class="btn btn-primary btn-block"
+                            style="padding: 12px;"
+                            onclick="showOrderSuccess()">
+
+                        Proceed to Checkout
+                        <i class="fa-solid fa-lock"></i>
+
+                    </button>
+
+                    <br><br>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= ORDER SUCCESS POPUP ================= -->
+    <div id="orderSuccessPopup"
+         class="order-popup">
+
+        <div class="order-popup-box">
+
+            <!-- Success Icon -->
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <h2>
+                Thank You! 🎉
+            </h2>
+
+            <p>
+                Your order has been placed successfully.
+                <br>
+                Thank you for shopping with
+                <strong>SHOE NEXUS</strong>.
+            </p>
+
+            <button type="button"
+                    onclick="closeOrderSuccess()"
+                    class="btn btn-primary order-popup-close">
+
+                <i class="fa-solid fa-arrow-left"></i>
+                Continue Shopping
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div class="footer-brand">
+
+                    <a href="index.html" class="brand-logo">
+
+                        <div class="logo-icon">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+
+                        <span>
+                            SHOE<span class="highlight">NEXUS</span>
+                        </span>
+
+                    </a>
+
+                    <p>
+                        India's premier online destination for authentic
+                        athletic, running, and street lifestyle footwear.
+                    </p>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Quick Links</h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html">Shop Catalog</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+
+                        <li>
+                            <a href="blog.html">Sneaker Blog</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact & Help
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Categories</h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a href="shop.html?category=running">
+                                Running Shoes
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=sneakers">
+                                Street Sneakers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=sports">
+                                Court & Basketball
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="shop.html?category=casual">
+                                Casual Slip-ons
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h4>Stay Updated</h4>
+
+                    <p style="font-size: 0.88rem;
+                              color: var(--gray-600);">
+                        Subscribe for limited releases and discounts.
+                    </p>
+
+                    <form class="newsletter-form"
+                          action="#"
+                          method="GET">
+
+                        <input type="email"
+                               placeholder="Your email address"
+                               required>
+
+                        <button type="submit"
+                                class="btn btn-primary btn-sm">
+                            Join
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <div>
+                    © 2026 <strong>SHOE NEXUS</strong>.
+                </div>
+
+                <div style="display: flex; gap: 24px;">
+
+                    <a href="contact.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="contact.html">
+                        Terms of Service
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+
+        // Show order success popup
+        function showOrderSuccess() {
+
+            const popup =
+                document.getElementById("orderSuccessPopup");
+
+            popup.style.display = "flex";
+
+            // Prevent background scrolling
+            document.body.style.overflow = "hidden";
+        }
+
+
+        // Close popup and return to shop
+        function closeOrderSuccess() {
+
+            const popup =
+                document.getElementById("orderSuccessPopup");
+
+            popup.style.display = "none";
+
+            // Enable background scrolling
+            document.body.style.overflow = "auto";
+
+            // Go to shop page
+            window.location.href = "shop.html";
+        }
+
+
+        // Close popup when clicking outside the popup box
+        document.getElementById("orderSuccessPopup")
+            .addEventListener("click", function(event) {
+
+                if (event.target === this) {
+
+                    this.style.display = "none";
+
+                    document.body.style.overflow = "auto";
+                }
+
+            });
+
+    </script>
+
+</body>
+</html>

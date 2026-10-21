@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Catalog & Actions — SHOE NEXUS Admin</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Admin Master Stylesheet (Clean White Theme + Modals) -->
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div>
+            <div class="sidebar-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div>
+                    <h3>SHOE NEXUS</h3>
+                    <span class="tag">ADMIN CONSOLE</span>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <span class="menu-label">Overview</span>
+                <a href="dashboard.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-chart-pie"></i> Dashboard</span>
+                </a>
+
+                <span class="menu-label">Management</span>
+                <a href="products.html" class="sidebar-link active">
+                    <span class="link-left"><i class="fa-solid fa-shoe-prints"></i> Products Catalog</span>
+                </a>
+                <a href="orders.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-truck-fast"></i> Orders & Delivery</span>
+                </a>
+                <a href="users.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-users"></i> Customers</span>
+                </a>
+                <a href="messages.html" class="sidebar-link">
+                    <span class="link-left"><i class="fa-solid fa-envelope-open-text"></i> Messages</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <a href="login.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout Admin</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main">
+        <!-- Topbar -->
+        <header class="admin-topbar">
+            <h1>Products Catalog Management</h1>
+            <div class="topbar-actions">
+                <div class="admin-user-pill">
+                    <div class="admin-avatar">A</div>
+                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--dark-900);">Admin Manager</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products Table Body -->
+        <div class="admin-body">
+            <!-- Filter Bar & Add Product Modal Trigger Button -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+                <div style="display: flex; gap: 10px;">
+                    <div>
+                        <input type="text" class="admin-input" placeholder="Search by shoe name or SKU..." style="width: 280px;">
+                    </div>
+                    
+                    
+                    <select class="admin-input">
+                        <option>All Categories</option>
+                        <option>Running</option>
+                        <option>Sneakers</option>
+                        <option>Basketball</option>
+                        <option>Casual</option>
+                    </select>
+                </div>
+
+                <!-- Pure CSS Trigger for Add Product Modal -->
+                <label for="modal-add-product" class="btn-admin-primary" style="cursor: pointer;">
+                    <i class="fa-solid fa-plus"></i> Add New Footwear
+                </label>
+            </div>
+
+            <!-- Products Inventory Table -->
+            <div class="table-card">
+                <div class="table-card-header">
+                    <h3>Footwear Inventory (9 Active Items)</h3>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>SKU</th>
+                            <th>Shoe Model</th>
+                            <th>Category</th>
+                            <th>Retail Price</th>
+                            <th>Stock Level</th>
+                            <th>Status</th>
+                            <th>Quick Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product Row 1 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-RN-01</span></td>
+                            <td><strong>HyperSpeed Nitro Marathon</strong></td>
+                            <td>Running</td>
+                            <td>₹4,499</td>
+                            <td>48 pairs</td>
+                            <td><span class="badge badge-success">In Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product Row 2 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-SN-02</span></td>
+                            <td><strong>Air Jordan Retro High</strong></td>
+                            <td>Sneakers</td>
+                            <td>₹6,999</td>
+                            <td>8 pairs</td>
+                            <td><span class="badge badge-warning">Low Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product Row 3 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-BB-03</span></td>
+                            <td><strong>Puma Clyde All-Pro Court</strong></td>
+                            <td>Basketball</td>
+                            <td>₹3,799</td>
+                            <td>24 pairs</td>
+                            <td><span class="badge badge-success">In Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product Row 4 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-ST-04</span></td>
+                            <td><strong>Adidas Forum Mid Classic</strong></td>
+                            <td>Streetwear</td>
+                            <td>₹5,299</td>
+                            <td>32 pairs</td>
+                            <td><span class="badge badge-success">In Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product Row 5 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-CS-05</span></td>
+                            <td><strong>Vans Old Skool Skate</strong></td>
+                            <td>Casual</td>
+                            <td>₹2,999</td>
+                            <td>62 pairs</td>
+                            <td><span class="badge badge-success">In Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Product Row 6 -->
+                        <tr>
+                            <td><span style="color: var(--gray-500); font-family: monospace;">#NEX-RN-06</span></td>
+                            <td><strong>Nike ZoomX Vaporfly Elite</strong></td>
+                            <td>Running</td>
+                            <td>₹8,499</td>
+                            <td>14 pairs</td>
+                            <td><span class="badge badge-success">In Stock</span></td>
+                            <td>
+                                <div style="display: flex; gap: 6px;">
+                                    <label for="modal-view-product" class="action-btn view" title="View Product Details" style="cursor: pointer;">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </label>
+                                    <label for="modal-edit-product" class="action-btn edit" title="Edit Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-pen"></i>
+                                    </label>
+                                    <label for="modal-delete-product" class="action-btn delete" title="Delete Footwear" style="cursor: pointer;">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- ====================================================================
+         1. PURE CSS POPUP MODAL: VIEW PRODUCT DETAILS
+         ==================================================================== -->
+    <input type="checkbox" id="modal-view-product" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 560px;">
+            <div class="admin-modal-header">
+                <div>
+                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-shoe-prints" style="color: var(--primary);"></i> Footwear Specifications
+                    </h3>
+                    <span style="font-size: 0.8rem; color: var(--gray-500);">SKU: #NEX-RN-01 • In Stock (48 pairs)</span>
+                </div>
+                <label for="modal-view-product" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <!-- Shoe Visual & Info Card -->
+            <div style="display: flex; gap: 16px; background-color: var(--gray-50); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px;">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=300&q=80" alt="Shoe Preview" style="width: 120px; height: 100px; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--gray-200);">
+                <div>
+                    <span class="badge badge-success" style="margin-bottom: 6px;">Running Category</span>
+                    <h4 style="font-size: 1.1rem; font-weight: 800; color: var(--dark-900);">HyperSpeed Nitro Marathon</h4>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 800; color: var(--primary); margin-top: 4px;">₹4,499</h3>
+                </div>
+            </div>
+
+            <!-- Specs Grid -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; font-weight: 700;">Stock Available</span>
+                    <p style="font-size: 0.95rem; font-weight: 700; color: var(--dark-900); margin-top: 2px;">48 Units in Warehouse</p>
+                </div>
+                <div style="border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: 12px;">
+                    <span style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; font-weight: 700;">Active Sizes (UK)</span>
+                    <p style="font-size: 0.95rem; font-weight: 700; color: var(--dark-900); margin-top: 2px;">UK 7, UK 8, UK 9, UK 10</p>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div style="margin-bottom: 24px;">
+                <span style="font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; font-weight: 700;">Product Description</span>
+                <p style="font-size: 0.88rem; color: var(--gray-600); margin-top: 4px; line-height: 1.5;">
+                    Built with ultra-responsive dual-density foam, high-traction carbon rubber outsole, and lightweight breathable engineered mesh for elite marathon distance performance.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 10px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                <label for="modal-view-product" class="btn-admin-outline" style="cursor: pointer;">Close</label>
+                <label for="modal-edit-product" class="btn-admin-primary" style="cursor: pointer;">
+                    <i class="fa-solid fa-pen"></i> Edit Product
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         2. PURE CSS POPUP MODAL: ADD NEW PRODUCT
+         ==================================================================== -->
+    <input type="checkbox" id="modal-add-product" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h3><i class="fa-solid fa-plus-circle" style="color: var(--primary);"></i> Add New Footwear</h3>
+                <label for="modal-add-product" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <form action="#" method="GET">
+                <div class="admin-form-group">
+                    <label>Shoe Model Name</label>
+                    <input type="text" class="admin-input" placeholder="e.g. Nike Pegasus Turbo 4" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="admin-form-group">
+                        <label>Category</label>
+                        <select class="admin-input" style="width: 100%;">
+                            <option>Running</option>
+                            <option>Sneakers</option>
+                            <option>Basketball & Court</option>
+                            <option>Casual</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>SKU Code</label>
+                        <input type="text" class="admin-input" placeholder="e.g. #NEX-RN-07" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="admin-form-group">
+                        <label>Retail Price (₹)</label>
+                        <input type="number" class="admin-input" placeholder="4999" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Initial Stock Quantity</label>
+                        <input type="number" class="admin-input" placeholder="50" required>
+                    </div>
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Shoe Image URL</label>
+                    <input type="url" class="admin-input" placeholder="https://images.unsplash.com/photo-..." value="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+                </div>
+
+                <div class="admin-form-group">
+                    <label>Available Sizes (UK)</label>
+                    <div style="display: flex; gap: 10px; margin-top: 4px;">
+                        <label style="display: flex; align-items: center; gap: 4px; font-size: 0.85rem;"><input type="checkbox" checked> UK 7</label>
+                        <label style="display: flex; align-items: center; gap: 4px; font-size: 0.85rem;"><input type="checkbox" checked> UK 8</label>
+                        <label style="display: flex; align-items: center; gap: 4px; font-size: 0.85rem;"><input type="checkbox" checked> UK 9</label>
+                        <label style="display: flex; align-items: center; gap: 4px; font-size: 0.85rem;"><input type="checkbox" checked> UK 10</label>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                    <label for="modal-add-product" class="btn-admin-outline" style="cursor: pointer;">Cancel</label>
+                    <button type="submit" class="btn-admin-primary">
+                        <i class="fa-solid fa-floppy-disk"></i> Save & Publish
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         3. PURE CSS POPUP MODAL: EDIT PRODUCT ACTION
+         ==================================================================== -->
+    <input type="checkbox" id="modal-edit-product" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal">
+            <div class="admin-modal-header">
+                <h3><i class="fa-solid fa-pen-to-square" style="color: var(--primary);"></i> Edit Footwear Model</h3>
+                <label for="modal-edit-product" class="modal-close-btn" title="Close"><i class="fa-solid fa-xmark"></i></label>
+            </div>
+
+            <form action="#" method="GET">
+                <div class="admin-form-group">
+                    <label>Shoe Model Name</label>
+                    <input type="text" class="admin-input" value="HyperSpeed Nitro Marathon" required>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="admin-form-group">
+                        <label>Category</label>
+                        <select class="admin-input" style="width: 100%;">
+                            <option selected>Running</option>
+                            <option>Sneakers</option>
+                            <option>Basketball & Court</option>
+                            <option>Casual</option>
+                        </select>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>SKU Code</label>
+                        <input type="text" class="admin-input" value="#NEX-RN-01" required>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                    <div class="admin-form-group">
+                        <label>Retail Price (₹)</label>
+                        <input type="number" class="admin-input" value="4499" required>
+                    </div>
+
+                    <div class="admin-form-group">
+                        <label>Current Stock</label>
+                        <input type="number" class="admin-input" value="48" required>
+                    </div>
+                </div>
+
+                <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--gray-200);">
+                    <label for="modal-edit-product" class="btn-admin-outline" style="cursor: pointer;">Cancel</label>
+                    <button type="submit" class="btn-admin-primary">
+                        <i class="fa-solid fa-check"></i> Update Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ====================================================================
+         4. PURE CSS POPUP MODAL: DELETE PRODUCT CONFIRMATION
+         ==================================================================== -->
+    <input type="checkbox" id="modal-delete-product" class="admin-modal-toggle">
+    <div class="admin-modal-overlay">
+        <div class="admin-modal" style="max-width: 440px; text-align: center;">
+            <div style="width: 56px; height: 56px; background-color: var(--danger-bg); color: var(--danger); border-radius: var(--radius-full); display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--dark-900); margin-bottom: 8px;">Delete Footwear Item?</h3>
+            <p style="font-size: 0.9rem; color: var(--gray-600); margin-bottom: 24px;">Are you sure you want to remove this shoe from catalog? This action will disable public purchasing.</p>
+
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <label for="modal-delete-product" class="btn-admin-outline" style="cursor: pointer;">Cancel</label>
+                <button type="button" class="btn-admin-primary" style="background-color: var(--danger);">
+                    <i class="fa-solid fa-trash"></i> Yes, Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

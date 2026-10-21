@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All Shoes — SHOE NEXUS</title>
+    <!-- Font Awesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Master Stylesheet (Clean White Theme) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Mobile Drawer Checkbox Toggle -->
+    <input type="checkbox" id="mobile-nav-toggle" class="mobile-nav-checkbox">
+    <label for="mobile-nav-toggle" class="mobile-drawer-overlay"></label>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="container navbar">
+            <a href="index.html" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span>SHOE<span class="highlight">NEXUS</span></span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline btn-sm header-auth-btn">
+                    <i class="fa-regular fa-user"></i> Login / Register
+                </a>
+                <a href="shop.html" class="header-icon-btn" title="Search Shoes">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="cart.html" class="header-icon-btn" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </a>
+                <label for="mobile-nav-toggle" class="hamburger-btn" aria-label="Open navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <aside class="mobile-nav-drawer">
+        <div>
+            <div class="mobile-drawer-header">
+                <a href="index.html" class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <span>SHOE<span class="highlight">NEXUS</span></span>
+                </a>
+                <label for="mobile-nav-toggle" class="drawer-close-btn" aria-label="Close menu">
+                    <i class="fa-solid fa-xmark"></i>
+                </label>
+            </div>
+            <div class="mobile-nav-links">
+                <a href="index.html">Home <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="shop.html" class="active">Shop Shoes <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="about.html">About Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="blog.html">Sneaker Blog <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="contact.html">Contact Us <i class="fa-solid fa-chevron-right"></i></a>
+                <a href="cart.html">My Cart <i class="fa-solid fa-bag-shopping"></i></a>
+            </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+            <a href="login.html" class="btn btn-primary btn-block">
+                <i class="fa-regular fa-user"></i> Login / Register
+            </a>
+            <a href="admin/login.html" class="btn btn-outline btn-block" style="font-size: 0.85rem;">
+                <i class="fa-solid fa-lock"></i> Admin Console
+            </a>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Page Banner -->
+        <section class="page-banner">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fa-solid fa-chevron-right" style="font-size: 0.7rem;"></i>
+                    <span>Shop Footwear</span>
+                </div>
+                <h1 class="page-title">Footwear Catalog</h1>
+                 <p style="color: var(--gray-400); font-size: 1.05rem;">
+                    Discover high-performance running sneakers, street drops, and lifestyle comfort.
+                </p>
+            </div>
+        </section>
+
+        <!-- Shop Main Layout -->
+        <section class="container section-padding" style="padding-top: 0;">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filter-sidebar">
+                    <div class="filter-group">
+                        <h4 class="filter-title">Categories</h4>
+                        <ul class="filter-list">
+                            <li><label class="filter-label"><input type="radio" name="cat" checked> All Footwear</label></li>
+                            <li><label class="filter-label"><input type="radio" name="cat"> Running (24)</label></li>
+                            <li><label class="filter-label"><input type="radio" name="cat"> Street Sneakers (36)</label></li>
+                            <li><label class="filter-label"><input type="radio" name="cat"> Sports & Court (18)</label></li>
+                            <li><label class="filter-label"><input type="radio" name="cat"> Casual Slip-ons (15)</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Price Range</h4>
+                        <ul class="filter-list">
+                            <li><label class="filter-label"><input type="checkbox"> Under ₹3,000</label></li>
+                            <li><label class="filter-label"><input type="checkbox"> ₹3,000 – ₹6,000</label></li>
+                            <li><label class="filter-label"><input type="checkbox"> ₹6,000 – ₹10,000</label></li>
+                            <li><label class="filter-label"><input type="checkbox"> Above ₹10,000</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Shoe Size (UK)</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                            <span class="size-pill">UK 6</span>
+                            <span class="size-pill">UK 7</span>
+                            <span class="size-pill">UK 8</span>
+                            <span class="size-pill">UK 9</span>
+                            <span class="size-pill">UK 10</span>
+                            <span class="size-pill">UK 11</span>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 class="filter-title">Gender</h4>
+                        <ul class="filter-list">
+                            <li><label class="filter-label"><input type="checkbox" > Men</label></li>
+                            <li><label class="filter-label"><input type="checkbox" > Women</label></li>
+                            <li><label class="filter-label"><input type="checkbox" > Unisex</label></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn btn-outline btn-block btn-sm">Reset Filters</button>
+                </aside>
+
+                <!-- Product Listing Area -->
+                <div>
+
+                    <!-- 3-Column Product Grid -->
+                    <div class="product-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <span class="product-badge">New</span>
+                            <div class="product-media">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1MqJv6BQJIFJk4GDWFIwIc8e4NnTkgJkpDEAweP4CA&s=10" alt="HyperSpeed Nitro">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Running</span>
+                                <h3 class="product-name">HyperSpeed Nitro Marathon</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                                    <span>4.9</span>
+                                    <span class="review-count">(128)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 7</span>
+                                    <span class="size-pill">UK 8</span>
+                                    <span class="size-pill selected">UK 9</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹4,499</span>
+                                        <span class="original-price">₹5,999</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <span class="product-badge sale">Sale</span>
+                            <div class="product-media">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ_2bMyLcnI18vBvKFq3Dhvy2Bw5Kr5qsfXaVlz2UEMA&s=10" alt="Air Jordan Retro High">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Sneakers</span>
+                                <h3 class="product-name">Air Jordan Retro High</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                                    <span>5.0</span>
+                                    <span class="review-count">(254)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 8</span>
+                                    <span class="size-pill selected">UK 9</span>
+                                    <span class="size-pill">UK 10</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹6,999</span>
+                                        <span class="original-price">₹8,999</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=500&q=80" alt="Puma Clyde All-Pro">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Basketball</span>
+                                <h3 class="product-name">Puma Clyde All-Pro Court</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></span>
+                                    <span>4.7</span>
+                                    <span class="review-count">(89)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 7</span>
+                                    <span class="size-pill">UK 8</span>
+                                    <span class="size-pill selected">UK 9</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹3,799</span>
+                                        <span class="original-price">₹4,999</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=500&q=80" alt="Adidas Forum Mid Classic">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Streetwear</span>
+                                <h3 class="product-name">Adidas Forum Mid Classic</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                                    <span>4.8</span>
+                                    <span class="review-count">(112)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 8</span>
+                                    <span class="size-pill selected">UK 9</span>
+                                    <span class="size-pill">UK 10</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹5,299</span>
+                                        <span class="original-price">₹6,499</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="https://images.unsplash.com/photo-1512374382149-233c42b6a83b?auto=format&fit=crop&w=500&q=80" alt="Nike Air Max Vision">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Lifestyle</span>
+                                <h3 class="product-name">Nike Air Max Vision Sport</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                                    <span>4.8</span>
+                                    <span class="review-count">(142)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 7</span>
+                                    <span class="size-pill selected">UK 8</span>
+                                    <span class="size-pill">UK 9</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹5,799</span>
+                                        <span class="original-price">₹7,299</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Product 9 -->
+                        <div class="product-card">
+                            <div class="product-media">
+                                <img src="https://images.unsplash.com/photo-1587563871167-1ee9c731aefb?auto=format&fit=crop&w=500&q=80" alt="Converse Chuck 70 Hi">
+                            </div>
+                            <div class="product-details">
+                                <span class="product-category">Casual</span>
+                                <h3 class="product-name">Converse Chuck 70 Vintage</h3>
+                                <div class="product-rating">
+                                    <span class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></span>
+                                    <span>4.8</span>
+                                    <span class="review-count">(220)</span>
+                                </div>
+                                <div class="product-sizes">
+                                    <span class="size-pill">UK 7</span>
+                                    <span class="size-pill selected">UK 8</span>
+                                    <span class="size-pill">UK 9</span>
+                                </div>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="current-price">₹3,499</span>
+                                        <span class="original-price">₹4,299</span>
+                                    </div>
+                                    <a href="cart.html" class="btn btn-primary btn-sm">
+                                        <i class="fa-solid fa-bag-shopping"></i> Add
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <a href="#" class="page-btn active">1</a>
+                        <a href="#" class="page-btn">2</a>
+                        <a href="#" class="page-btn">3</a>
+                        <a href="#" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="brand-logo">
+                        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <span>SHOE<span class="highlight">NEXUS</span></span>
+                    </a>
+                    <p>India's premier online destination for authentic athletic, running, and street lifestyle footwear.</p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop Catalog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Sneaker Blog</a></li>
+                        <li><a href="contact.html">Contact & Help</a></li>
+                        <!-- <li><a href="admin/login.html" style="color: var(--primary); font-weight: 600;"><i class="fa-solid fa-lock"></i> Admin Panel</a></li> -->
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="shop.html?category=running">Running Shoes</a></li>
+                        <li><a href="shop.html?category=sneakers">Street Sneakers</a></li>
+                        <li><a href="shop.html?category=sports">Court & Basketball</a></li>
+                        <li><a href="shop.html?category=casual">Casual Slip-ons</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Stay Updated</h4>
+                    <p style="font-size: 0.88rem; color: var(--gray-600);">Subscribe for limited releases and discounts.</p>
+                    <form class="newsletter-form" action="#" method="GET">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="btn btn-primary btn-sm">Join</button>
+                    </form>
+                </div>
+            </div>
+
+             <div class="footer-bottom">
+                <div>
+                    © 2026 <strong>SHOE NEXUS</strong>.
+                </div>
+                <div style="display: flex; gap: 24px;">
+                    <a href="contact.html">Privacy Policy</a>
+                    <a href="contact.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
